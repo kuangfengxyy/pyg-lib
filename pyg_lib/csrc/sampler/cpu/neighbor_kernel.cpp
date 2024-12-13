@@ -385,7 +385,7 @@ sample(const at::Tensor& rowptr,
     typedef std::pair<scalar_t, scalar_t> pair_scalar_t;
     typedef std::conditional_t<!disjoint, scalar_t, pair_scalar_t> node_t;
     // TODO(zeyuan): Do not force int64_t for time type.
-    typedef int64_t temporal_t;
+    typedef int32_t temporal_t;
     typedef NeighborSampler<node_t, scalar_t, temporal_t, replace, directed,
                             return_edge_id, distributed>
         NeighborSamplerImpl;
